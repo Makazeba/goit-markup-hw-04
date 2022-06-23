@@ -61,12 +61,15 @@ color: var(--accent-color)
 .header-logo-studio {
 color: #000000;
 }
-.header-link:hover {
+.header-link:hover, 
+.header-link:focus {
     color: var(--accent-color);
 }
-.header-link-contact:hover {
-    color: var(--accent-color);
+.header-link-contact:hover,
+.header-link-contact:focus {
+color: var(--accent-color);
 }
+    
 .header-item:not(:last-child) {
     margin-right: 50px;
 }
@@ -87,13 +90,25 @@ font-size: 14px;
 line-height: 1.14;
 letter-spacing: 0.02em;
 color: var(--second-main-color);
+display: flex;
+align-items: center;
 }
+.header-icon {
+fill: var(--second-main-color);
+margin-right: 10px;
+}
+.header-link-contact:hover .header-icon,
+.header-link-contact:focus .header-icon {
+    fill: var(--accent-color);
+}
+
 /* ----------HERO----------- */
 .section {
     padding: 94px 0;
 }
 .hero {
     background-color: var(--main-background-color);
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/herou-img.jpg);
 }
 .hero-content {
     text-align: center;
@@ -257,7 +272,13 @@ margin-bottom: 16px;
 .team-soc-link:hover {
     background-color: var(--accent-color);
 }
+.team-soc-link:focus {
+    background-color: var(--accent-color);
+}
 .team-soc-link:hover .team-soc-icon {
+    fill: #FFFFFF;
+}
+.team-soc-link:focus .team-soc-icon {
     fill: #FFFFFF;
 }
 .team-soc-icon {
@@ -270,19 +291,28 @@ margin-bottom: 16px;
 .clients-list {
     display: flex;
 }
-.clients-item {
+.clients-link {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 170px;
     height: 92px;
     border: 1px solid #AFB1B8;
+    border-radius: 4px;
 }
 .clients-item + .clients-item {
     margin-left: var(--typical-gap);
 }
+.clients-link:hover,
+.clients-link:focus {
+    border-color: var(--accent-color);
+}
+.clients-link:hover .clients-icon,
+.clients-link:focus .clients-icon {
+    fill: var(--accent-color);
+}
 .clients-icon {
-    fill: #AFB1B8;
+    fill: #AFB1B8; 
 }
 
 /* ----------FOOTER----------- */
@@ -297,7 +327,7 @@ color: var(--accent-color)
 }
 
 .footer-logo-studio {
-color: #000000;
+color: #FFFFFF;
 } 
 
 .footer {
@@ -325,9 +355,55 @@ color: rgba(255, 255, 255, 0.6);
 .footer-item:not(:last-child) {
     margin-bottom: 9px;
 }
+.footer-content {
+    display: flex;
+
+}
+.footer-icon-link {
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-icon-link:hover,
+.footer-icon-link:focus {
+    background: var(--accent-color);
+}
+.footer-icon {
+    fill: #FFFFFF
+}
+.footer-icon-item + .footer-icon-item {
+    margin-left: 10px;
+}
+.footer-icon-list {
+    display: flex;
+}
+.footer-first-block {
+    margin-right: 70px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.footer-icon-cont {
+    padding-top: 72px;
+    padding-bottom: 100px;
+}
+.footer-icon-title {
+    font-weight: 700;
+font-size: 14px;
+line-height: 1.14;
+letter-spacing: 0.03em;
+text-transform: uppercase;
+color: #FFFFFF;
+margin-bottom: 20px;
+}
 
 /* -----------PORTFOLIO------------ */
-
+.header-border {
+    border: 1px solid #ECECEC;
+}
 /* --------MENU------- */
 .menu-item-btn {
     font-family: Roboto, sans-serif;
@@ -344,7 +420,8 @@ border: 0;
 background: #F5F4FA;
 border-radius: 4px;
 }
-.menu-item-btn:hover {
+.menu-item-btn:hover,
+.menu-item-btn:focus {
 font-family: 'Roboto';
 font-style: normal;
 font-weight: 500;
